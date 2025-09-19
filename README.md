@@ -26,7 +26,8 @@ Output
         response = requests.get(full_download_url)
         if response.status_code == 200:
             pdf_file_path = os.path.join(pdf_folder_path, f"price_history_{instrument_code}_{today_date}.pdf")
-            with open(pdf_file_path, "wb") as file:
+
+             with open(pdf_file_path, "wb") as file:
                 file.write(response.content)
             print(f"PDF for instrument code {instrument_code} on {today_date} downloaded successfully: {pdf_file_path}")
         else:
@@ -38,7 +39,7 @@ Output
 
       import re
 
-      # Example: regex for a row with Date, Instrument, and Volume
+      Example: regex for a row with Date, Instrument, and Volume
       row_pattern = re.compile(r"(\d{4}-\d{2}-\d{2})\s+([A-Za-z0-9]+)\s+(\d+)")
      
 
