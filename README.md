@@ -32,7 +32,8 @@ Output
                 file.write(response.content)
             print(f"PDF for instrument code {instrument_code} on {today_date} downloaded successfully: {pdf_file_path}")
         else:
-            print(f"Failed to download PDF for instrument code {instrument_code}. Status code: {response.status_code}") ```
+            print(f"Failed to download PDF for instrument code {instrument_code}. Status code: {response.status_code}")
+        ```
 
 2. **Extract Data from PDFs**  
    - Parses PDF content using text extraction techniques.
@@ -42,7 +43,8 @@ Output
       import re
 
       Example: regex for a row with Date, Instrument, and Volume
-      row_pattern = re.compile(r"(\d{4}-\d{2}-\d{2})\s+([A-Za-z0-9]+)\s+(\d+)")```
+      row_pattern = re.compile(r"(\d{4}-\d{2}-\d{2})\s+([A-Za-z0-9]+)\s+(\d+)")
+      ```
      
 
 3. **Data Cleaning and Structuring**  
