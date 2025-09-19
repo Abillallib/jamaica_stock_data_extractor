@@ -23,6 +23,7 @@ Output
    - Automatically fetches publicly available PDFs from the JSE website.
 
      # Example : Download the PDF using requests
+        ```python
         response = requests.get(full_download_url)
         if response.status_code == 200:
             pdf_file_path = os.path.join(pdf_folder_path, f"price_history_{instrument_code}_{today_date}.pdf")
@@ -31,16 +32,17 @@ Output
                 file.write(response.content)
             print(f"PDF for instrument code {instrument_code} on {today_date} downloaded successfully: {pdf_file_path}")
         else:
-            print(f"Failed to download PDF for instrument code {instrument_code}. Status code: {response.status_code}")
+            print(f"Failed to download PDF for instrument code {instrument_code}. Status code: {response.status_code}") ```
 
 2. **Extract Data from PDFs**  
    - Parses PDF content using text extraction techniques.
    - Uses **regular expressions (regex)** to extract relevant financial data such as stock prices, volumes, and company information.
 
+      ```python
       import re
 
       Example: regex for a row with Date, Instrument, and Volume
-      row_pattern = re.compile(r"(\d{4}-\d{2}-\d{2})\s+([A-Za-z0-9]+)\s+(\d+)")
+      row_pattern = re.compile(r"(\d{4}-\d{2}-\d{2})\s+([A-Za-z0-9]+)\s+(\d+)")```
      
 
 3. **Data Cleaning and Structuring**  
